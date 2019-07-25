@@ -1,0 +1,21 @@
+{
+  "name": "webpack-emweb-theme-plugin",
+  "version": "0.0.1",
+  "description": "webpack plugin 4 emweb",
+  "main": "emwebThemePlugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "theme"
+  ],
+  "author": "us6002",
+  "license": "ISC",
+  "devDependencies": {
+    "glob": "^7.1.4",
+    "less": "^3.9.0",
+    "less-plugin-npm-import": "^2.1.0",
+    "webpack": "^4.37.0"
+  }
+}
