@@ -67,8 +67,9 @@ function genCustomCSS ( customLessPath, modifyVars, paths ) {
 function lightenCSS (text, modifyVars, changeColorOnly) {
   const isColorOnly = changeColorOnly || false;
   const themeVars = Object.values(modifyVars);
-  const regval = /(?<=:).*(?=[\};])/;                          // 用于获取CSS属性值，校验是否可能与主题相关
-  const regcolor = /#[a-z0-9]{3,8}/i;                          // 用于验证是否为HEX颜色（防止精简CSS时误删衍生色）
+  const regval = /(?<=:).*(?=[\};])/;                           // 用于获取CSS属性值，校验是否可能与主题相关
+  const regcolorHex = /#[a-z0-9]{3,8}/i;                        // 用于验证是否为HEX颜色（防止精简CSS时误删衍生色）
+  const regcolorRgba = /rgba\(.*?\)/i;                          // 用于验证是否为rgba颜色(防止精简CSS时误删衍)
   let rules = text.split(/(?<=\})(?=\S*[\.@#])/g);
 
   let skipFlag = false;
@@ -87,7 +88,7 @@ function lightenCSS (text, modifyVars, changeColorOnly) {
     for (let j = 1; j < matches.length; j++) {
       let cssVar = regval.exec(matches[j]);
       cssVar = cssVar ? cssVar[0] : "";
-      if (regcolor.test(cssVar) || 
+      if (regcolorHex.test(cssVar) || regcolorRgba.test(cssVar) || 
       (isColorOnly ? false : themeVars.some((v)=>( cssVar.indexOf(v) != -1 )))) {
         continue;
       };

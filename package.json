@@ -1,6 +1,6 @@
 {
   "name": "webpack-emweb-theme-plugin",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "webpack plugin 4 emweb",
   "main": "emwebThemePlugin.js",
   "scripts": {
