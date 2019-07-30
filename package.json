@@ -1,16 +1,18 @@
 {
-  "name": "webpack-emweb-theme-plugin",
-  "version": "0.0.3",
-  "description": "webpack plugin 4 emweb",
-  "main": "emwebThemePlugin.js",
+  "name": "@1msoft/kantui-theme-webpack-plugin",
+  "version": "0.0.1",
+  "description": "webpack plugin 4 kantui",
+  "main": "kantuiThemeWebpackPlugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "react",
-    "theme"
+    "theme",
+    "change-color",
+    "dynamic-theme",
+    "webpack"
   ],
-  "author": "us6002",
   "license": "ISC",
   "devDependencies": {
     "glob": "^7.1.4",

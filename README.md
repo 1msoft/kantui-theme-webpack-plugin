@@ -1,20 +1,20 @@
-# webpack-emweb-theme-plugin
+# kantui-theme-webpack-plugin
 
 
 
 
 
-webpack-emweb-theme-plugin是一款webpack插件，该插件可以完成在线主题切换。
+kantui-theme-webpack-plugin是一款webpack插件，该插件可以完成在线主题切换。
 该插件适用于使用了andt或kant-ui组件、且使用LESS样式的项目。
 
 
 ## 安装
 ```
-npm install webpack-emweb-theme-plugin -D
+npm i @1msoft/kantui-theme-webpack-plugin -D
 ```
 或者
 ```
-yarn add webpack-emweb-theme-plugin -D
+yarn add @1msoft/kantui-theme-webpack-plugin -D
 ```
 ## 配置主题
   theme.js
@@ -38,7 +38,7 @@ module.exports = themes;
 
 ## 配置插件
 ```javascript
-const EmWebThemePlugin = require('webpack-emweb-theme-plugin');
+const KantuiThemeWebpackPlugin = require('kantui-theme-webpack-plugin');
 
 const themeOption = { 
   theme: require(".themes.js"),         // theme 引入上文主题配置
@@ -48,7 +48,7 @@ const themeOption = {
   colorOnly: true,           // 目标主题是否只保留颜色，当前为false时可能出现问题，建议true
 };
 
-const themePlugin = new EmWebThemePlugin(themeOption);
+const themePlugin = new KantuiThemeWebpackPlugin(themeOption);
 // 添加插件至plugin array
 plugins: [
     themePlugin

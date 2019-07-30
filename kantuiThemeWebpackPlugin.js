@@ -1,9 +1,9 @@
-const renderCSS = require('./emWebThemeGenerator');
+const renderCSS = require('./kantuiThemeGenerator');
 const crypto = require('crypto');
 /**
  * emweb主题插件
  */
-class EmWebThemePlugin {
+class KantuiThemeWebpackPlugin {
   /**
    * emweb主题插件
    * @param {Object}  options
@@ -21,7 +21,7 @@ class EmWebThemePlugin {
   apply(compiler) {
 
     const options = this.options;
-    compiler.hooks.emit.tapAsync('EmWebThemePlugin', (compilation, callback) => {
+    compiler.hooks.emit.tapAsync('KantuiThemeWebpackPlugin', (compilation, callback) => {
 
       Promise.all(options.theme.map((v)=>renderCSS(
         options.antdDir, 
@@ -49,4 +49,4 @@ class EmWebThemePlugin {
   }
 };
 
-module.exports = EmWebThemePlugin;
+module.exports = KantuiThemeWebpackPlugin;
